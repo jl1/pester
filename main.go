@@ -130,7 +130,7 @@ func ExponentialBackoff(i int) time.Duration {
 }
 
 // ExponentialJitterBackoff returns ever increasing backoffs by a power of 2
-// with +/- 0-33% to prevent sychronized reuqests.
+// with +/- 0-33% to prevent synchronized requests.
 func ExponentialJitterBackoff(i int) time.Duration {
 	return jitter(int(1 << uint(i)))
 }
@@ -141,7 +141,7 @@ func LinearBackoff(i int) time.Duration {
 }
 
 // LinearJitterBackoff returns increasing durations, each a second longer than the last
-// with +/- 0-33% to prevent sychronized reuqests.
+// with +/- 0-33% to prevent synchronized requests.
 func LinearJitterBackoff(i int) time.Duration {
 	return jitter(i)
 }
